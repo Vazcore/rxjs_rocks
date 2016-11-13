@@ -1,0 +1,7 @@
+<div id="running_text" #dashboard>
+  <div #text_container>
+    <span *ngFor="let letter of letters" [ngStyle]="{'left': letter.left, 'top': letter.top,'position': 'absolute'}">
+      {{letter.text}}
+    </span>
+  </div>
+</div>

@@ -1,0 +1,12 @@
+#running_text {
+  width: 100%;
+  background-color: blue;
+  height: 700px;
+  position: relative;
+}
+
+#running_text span {
+  color: white;
+  font-weight: bold;
+  font-size: 30px;
+}
