@@ -13,6 +13,7 @@ import { ThrottleComponent } from './throttle/throttle.component';
 import { SmartSearchComponent } from './smart-search/smart-search.component';
 import { CustomOperatorsComponent } from './custom-operators/custom-operators.component';
 import { RunningTextComponent } from './running-text/running-text.component';
+import { RunningComponent } from './running/running.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { RunningTextComponent } from './running-text/running-text.component';
     ThrottleComponent,
     SmartSearchComponent,
     CustomOperatorsComponent,
-    RunningTextComponent
+    RunningTextComponent,
+    RunningComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +36,8 @@ import { RunningTextComponent } from './running-text/running-text.component';
       { path: 'follow_up', component: WhoToFollowComponent },
       { path: 'throttle', component: ThrottleComponent },
       { path: 'smart_search', component: SmartSearchComponent },
-      { path: 'custom_operators', component: CustomOperatorsComponent }
+      { path: 'custom_operators', component: CustomOperatorsComponent },
+      { path: 'running_text', component: RunningComponent }
     ])
   ],
   providers: [

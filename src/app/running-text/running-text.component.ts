@@ -14,11 +14,12 @@ export class RunningTextComponent implements OnInit, OnDestroy {
   @ViewChild('text_container') text_container;
   letters: Array<any> = [];
   mouseMoveStream: any;
+  mouseMoveSubscription: any;
   constructor() {}
 
   ngOnInit() {
     
-    this.mouseMoveStream = Observable.fromEvent(this.dashboard.nativeElement, 'mousemove')
+    this.mouseMoveStream = Observable.fromEvent<MouseEvent>(this.dashboard.nativeElement, 'mousemove')
     .map(event => {
       let offset = this.calculateOffset();
       return {
@@ -42,15 +43,15 @@ export class RunningTextComponent implements OnInit, OnDestroy {
           index: config.index 
         };
       });
-    })
-    .subscribe(letter => {
+    });
+    this.mouseMoveSubscription = this.mouseMoveStream.subscribe(letter => {
       this.letters[letter.index] = letter;
     }); 
 
   }
 
   ngOnDestroy() {
-    this.mouseMoveStream.dispose();
+    this.mouseMoveSubscription.unsubscribe();
   }
 
   calculateOffset() {
