@@ -1,29 +1,87 @@
 <h3>"What is Reactive Programming?"</h3>
 
-<ul class="m-a-lg list-group">
-  
-  <li class="list-group-item" role="button" data-toggle="collapse" href="#panel4" aria-expanded="false" aria-controls="panel1">Our mantra :)
+<div class="m-a-lg list-group">
+
+  <div class="list-group-item" role="button" data-toggle="collapse" href="#panel4" aria-expanded="false" aria-controls="panel1">Our mantra :)
     <div class="collapse" id="panel4">
       <div class="well">
         <div>
           <img src="assets/img5.png" />
-        </div>        
+        </div>
       </div>
     </div>
-  </li>
-  <li class="list-group-item" role="button" data-toggle="collapse" href="#panel1" aria-expanded="false" aria-controls="panel1">Stream
+  </div>
+
+  <div class="list-group-item" role="button" data-toggle="collapse" href="#panel1" aria-expanded="false" aria-controls="panel1">Stream
     <div class="collapse" id="panel1">
       <div class="well">
         <img width="100%" src="assets/img1.png" />
       </div>
     </div>
-  </li>  
-  <li class="list-group-item" role="button" data-toggle="collapse" href="#panel2" aria-expanded="false" aria-controls="panel2">Proccessing Stream
-    <div class="collapse" id="panel2">
-      <div class="well">        
-        <img width="70%" src="assets/img2.png" />
-      </div>
-      <div class="well"><a class="nav-link" routerLink="/throttle">My Example</a></div>
+  </div>
+
+  <div class="list-group-item" role="button" data-toggle="collapse" href="#panel7"
+    aria-expanded="false" aria-controls="panel7">What can be streams?</div>
+  <div class="collapse" id="panel7">
+    <div class="well">
+      <h4>What can be streams?</h4>
+      <ul>
+        <li>Arrays of Data</li>
+        <li>Mouse / Keyboard Events</li>
+        <li>DOM Events</li>
+        <li>Network I/O (ajax, websockets)</li>
+        <li>Animations</li>
+        <li>Speech Recognition</li>
+        <li>Anything ....</li>
+      </ul>
     </div>
-  </li>
-</ul>
+  </div>
+
+
+  <div class="list-group-item" role="button" data-toggle="collapse" href="#panel6" 
+    aria-expanded="false" aria-controls="panel1">Quick Reminder About Observer Pattern</div>
+  <div class="collapse" id="panel6">
+    <div class="well">
+      <div>
+        <img src="assets/img11.png" />
+      </div>
+    </div>
+    <div class="well">
+      <ul>
+        <li>
+          <p>Observer 1</p>
+          <input id="test" type="checkbox" hidden="hidden" 
+            [(ngModel)]="observer1.subscribed" (change)="switchSubscribtion(observer1)">
+          <label for="test" class="switch"></label>
+          <span>{{observer1.getLastMessage()}}</span>
+        </li>
+        <li>
+          <p>Observer 2</p>
+          <input id="test1" type="checkbox" hidden="hidden"
+            [(ngModel)]="observer2.subscribed" (change)="switchSubscribtion(observer2)">
+          <label for="test1" class="switch"></label>
+          <span>{{observer1.getLastMessage()}}</span>
+        </li>        
+      </ul>
+      <div class="form-group">
+        <label for="t1">Email address</label>
+        <input type="text" #eventMsg class="form-control" id="t1" aria-describedby="Event Message" placeholder="Enter message">        
+      </div>      
+      <div class="form-group">
+        <button type="button" class="btn btn-success" (click)="fireEvent(eventMsg.value)">Fire Event</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="list-group-item" role="button" data-toggle="collapse" href="#panel2"
+    aria-expanded="false" aria-controls="panel2">Proccessing Stream</div>
+  <div class="collapse" id="panel2">
+    <div class="well">
+      <img width="70%" src="assets/img2.png" />
+    </div>
+    <div class="well"><a class="nav-link" routerLink="/throttle">My Example</a></div>
+  </div>
+
+</div>
+
+

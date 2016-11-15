@@ -1,3 +1,39 @@
 .list-group-item {
   margin-top: 15px;
 }
+
+ul {
+  list-style: none;
+}
+
+input:checked + .switch::before {
+  left: 1.25rem;
+  background: #8bc34a;
+}
+
+.switch {
+    display: inline-block;
+    position: relative;
+    width: 2.5rem;
+    height: 1rem;
+    border-radius: 0.5rem;
+    background: rgba(0,0,0,0.26);
+    -webkit-transition: background 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: background 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.switch::before {
+    content: '';
+    position: absolute;
+    top: -0.25rem;
+    left: -0.25rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    background: #fafafa;
+    box-shadow: 0 0.25rem 0.5rem rgba(0,0,0,0.28);
+    border-radius: 50%;
+    -webkit-transition: left 0.28s cubic-bezier(0.4, 0, 0.2, 1), background 0.28s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: left 0.28s cubic-bezier(0.4, 0, 0.2, 1), background 0.28s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+}
