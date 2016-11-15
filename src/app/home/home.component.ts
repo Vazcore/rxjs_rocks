@@ -61,22 +61,7 @@ export class HomeComponent implements OnInit {
     this.observer2 = new Observer(2);
   }
 
-  ngOnInit() {
-
-    // subject.subscribe(observer1.log, observer1);
-    // subject.subscribe(observer2.log, observer2);
-
-    // subject.fire('Message A');    
-    // console.log(observer1.getMessages());
-    // console.log(observer2.getMessages());
-    // console.log('--------------------------------');
-    // subject.unsubscribe(observer1);
-
-    // subject.fire('Message B');    
-    // console.log(observer1.getMessages());
-    // console.log(observer2.getMessages());
-
-  }
+  ngOnInit() {}
 
   fireEvent(msg: string) {
     this.subject.fire(msg);

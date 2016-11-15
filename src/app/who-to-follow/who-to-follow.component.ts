@@ -93,12 +93,14 @@ export class WhoToFollowComponent implements OnInit {
         let userList = Array.apply(this, users);        
         return userList[Math.floor(Math.random()*userList.length)];
       }
-    );
+    ).startWith(null);
     
     this.suggetstions.push(suggestion);
 
     suggestion.subscribe(user => {
-      this.users[index] = user;
+      if (user !== null) {
+        this.users[index] = user;
+      }      
     });
   }
 

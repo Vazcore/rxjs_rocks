@@ -24,17 +24,18 @@ export class ThrottleComponent implements OnInit {
 
   ngOnInit() {
     this.click$ = Observable.fromEvent(this.clickBtn.nativeElement, 'click')
-    
-    //  this.click$
-    //  .delay(1000)
-    //  .subscribe(v => console.log(v));
-    
     this.click$.bufferWhen(() => this.click$.debounceTime(300))    
     .map(clicks => clicks.length)
     .filter(count => count >= 2)
     .subscribe(count => {
       this.multipple_clicks.push(count);
     });
+
+
+
+     //  this.click$
+    //  .delay(1000)
+    //  .subscribe(v => console.log(v));
   }
 
 }
